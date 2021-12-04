@@ -157,6 +157,7 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 if os.getcwd() == '/app':
     import dj_database_url
     BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+    print(BASE_DIR)
     DATABASES = {
     'default': dj_database_url.config(default='postgres://localhost')
     }
@@ -164,3 +165,7 @@ if os.getcwd() == '/app':
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
     # Allow all host headers.
     ALLOWED_HOSTS = ['crash-course1.herokuapp.com']
+    
+    dotenv_path = os.path.join(BASE_DIR, '.env')
+    load_dotenv(dotenv_path)
+    SECRET_KEY = os.environ.get('SECRET_KEY')
