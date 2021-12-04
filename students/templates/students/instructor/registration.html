@@ -8,7 +8,10 @@
         <form method="post" class="p-4 p-md-5 border rounded-3 bg-light row g-3">
             <div class="pb-2 border-bottom">
                 <h1>Instructor sign up</h1>
-                <p>Enter your details to create an account:</p>
+                <div class="row">
+                    <p class="col">Enter your details to create an account</p>
+                    <span class="col text-end"><strong>Student?</strong> <a href="{% url 'student_registration' %}" >register here</a></span>
+                </div>
             </div>
             {% csrf_token %}
             {% if form.errors %}

@@ -11,7 +11,7 @@ class CourseEnrollForm(forms.Form):
                                     widget=forms.HiddenInput)
     
     
-class InstructorRegistrationForm(UserCreationForm):
+class RegistrationForm(UserCreationForm):
     
     class Meta(UserCreationForm):
         model = User

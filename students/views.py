@@ -9,11 +9,11 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 
-from .forms import CourseEnrollForm, InstructorRegistrationForm
+from .forms import CourseEnrollForm, RegistrationForm
 from courses.models import Course
 
 class StudentRegistrationView(CreateView):
-    form_class = UserCreationForm
+    form_class = RegistrationForm
     template_name = "students/student/registration.html"
     success_url = reverse_lazy('student_course_list')
     
@@ -29,7 +29,7 @@ class StudentRegistrationView(CreateView):
     
     
 class InstructorRegistrationView(CreateView):
-    form_class = InstructorRegistrationForm
+    form_class = RegistrationForm
     template_name = "students/instructor/registration.html"
     success_url = reverse_lazy('manage_course_list')
     # success_url = reverse_lazy('course_list')
