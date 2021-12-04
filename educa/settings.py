@@ -5,11 +5,11 @@ import os
 from dotenv import load_dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-# BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(
-    os.path.join(__file__, os.pardir)
-)))
+# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(
+#     os.path.join(__file__, os.pardir)
+# )))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
@@ -164,7 +164,3 @@ if os.getcwd() == '/app':
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
     # Allow all host headers.
     ALLOWED_HOSTS = ['crash-course1.herokuapp.com']
-    
-    dotenv_path = os.path.join(BASE_DIR, '.env')
-    load_dotenv(dotenv_path)
-    SECRET_KEY = os.environ.get('SECRET_KEY')
