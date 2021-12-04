@@ -29,12 +29,7 @@
                     {% if request.user.is_authenticated %}
                         <li class="nav-item"><a class="nav-link link {% if request.path == '/' %} active {% endif %}" href="/">Home</a></li>
                         <li class="nav-item"><a class="nav-link link {% if request.path == '/students/courses/' %} active {% endif %}" href="{% url 'student_course_list' %}">Student Dashboard</a></li>
-                        <!-- {% for group in request.user.groups.all %}
-                            {% if group.name == 'Instructors' %}
-                                <li class="nav-item">
-                                    <a class="nav-link link {% if request.path == '/course/mine/' %} active {% endif %}" href="{% url 'manage_course_list' %}">Instructor Dashboard</a></li>
-                            {% endif %}
-                        {% endfor %} -->
+                        
                         <li class="nav-item">
                             <a class="nav-link btn btn-sm btn-secondary {% if request.path == '/accounts/logout/' %}active {% endif %}" href="{% url 'logout' %}" role="button">Sign out</a>
                         </li>
