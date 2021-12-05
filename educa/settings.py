@@ -22,7 +22,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['crashcourse.com', '127.0.0.1']
+ALLOWED_HOSTS = ['127.0.0.1']
 
 # Application definition
 
@@ -148,7 +148,7 @@ CHANNEL_LAYERS = {
     'default': {
         'BACKEND': 'channels_redis.core.RedisChannelLayer',
         'CONFIG': {
-            'hosts': [os.environ.get('REDIS_URL', 'redis://localhost:6379')],
+            'hosts': [('127.0.0.1', 6379)],
         },
     },
 }
@@ -169,3 +169,12 @@ if os.getcwd() == '/app':
     dotenv_path = os.path.join(BASE_DIR, '.env')
     load_dotenv(dotenv_path)
     SECRET_KEY = os.environ.get('SECRET_KEY')
+    
+    CHANNEL_LAYERS = {
+        'default': {
+            'BACKEND': 'channels_redis.core.RedisChannelLayer',
+            'CONFIG': {
+                'hosts': [os.environ.get('REDIS_URL', 'redis://localhost:6379')],
+            },
+        },
+    }
