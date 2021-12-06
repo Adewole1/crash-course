@@ -11,11 +11,23 @@
 <main class="d-flex mt-4">
     {% with course=module.course %}
         <nav class="navbar navbar-expand-md">
-            <div class="d-flex">
+            <div class="d-flex text-center">
                 <a class="navbar-toggler" role="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarToggler" aria-controls="sidebarToggler" aria-expanded="false" aria-label="Toggle navigation">
-                <strong class="m-2">Modules</strong>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                    <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+                  </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16" style="margin-left: -15px;">
+                    <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+                  </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16" style="margin-left: -15px;">
+                    <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+                  </svg>
                 </a>
-            </div> 
+                <div class="text-center justify-content-center align-items-center mt-1 navbar-toggler">
+                  <strong class="me-0 text-center">Modules</strong>
+                </div>
+                
+              </div>    
 
             <div class="offcanvas offcanvas-start d-flex flex-column flex-shrink-0 align-self-start p-3 text-white bg-dark" tabindex="-1" id="sidebarToggler" aria-labelledby="sidebarTogglerLabel" style="width: 250px; border-top-right-radius: 6px; border-bottom-right-radius: 6px">
                 <div href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
