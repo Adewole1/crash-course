@@ -10,11 +10,17 @@
 <main class="d-flex mt-4 ">
   {% with course=module.course %}
     <nav class="navbar navbar-expand-md">
-      <div class="d-flex">
+      <div class="d-flex text-center">       
         <a class="navbar-toggler" role="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarToggler" aria-controls="sidebarToggler" aria-expanded="false" aria-label="Toggle navigation">
-          <strong class="">Modules</strong>
+          <div class="text-center justify-content-center align-items-center navbar-toggler">
+            <strong class="me-0 text-center">Modules
+              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+              </svg>
+            </strong>
+          </div>
         </a>
-      </div> 
+      </div>   
 
       <div class="offcanvas offcanvas-start d-flex flex-column flex-shrink-0 align-self-start p-3 text-white bg-dark" tabindex="-1" id="sidebarToggler" aria-labelledby="sidebarTogglerLabel" style="width: 250px; border-top-right-radius: 6px; border-bottom-right-radius: 6px">
         <div href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">

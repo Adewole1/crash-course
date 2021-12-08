@@ -5,7 +5,12 @@
 {% endblock title %}
 
 {% block content %}
-    <div id="chat" class="container">
+  <div>
+    <div class="text-center">
+
+    </div>
+  </div>
+    <div id="chat" class="flex">
 
     </div>
     <div id="chat-input" class="input-group">
@@ -29,14 +34,22 @@
 
     var isMe = data.user === '{{ request.user }}';
     var source = isMe ? 'me' : 'other';
-    var name = isMe ? 'Me ' : data.user;
+    var name = isMe ? 'You ' : data.user;
 
     var $chat = $('#chat');
-    $chat.append('<div class="message ' + source + '">' + 
-                  '<strong>' + name + '</strong>' + 
-                  '<span class="date">' + datetime + '</span><br>' +
-                  message + 
-                '</div>');
+    if(source == "me") {
+      $chat.append('<div class="col-9 float-end text-end mb-2 ' + source + '">' + 
+        '<strong class="text-capitalize">' + name + '</strong>' + 
+        '<span class="date ms-2 mt-1 me-1 ">' + datetime + '</span><br>' +
+        '<p class="mb-0 fs-5 p-2 ps-4 float-end" style="width:auto; border-top-left-radius:0.5rem; border-bottom-left-radius: 0.5rem; background-color: rgba(223, 23, 23, 0.959); color:white;">' + message + '</p>' +
+      '</div>');
+    } else {
+      $chat.append('<div class="col-9 float-start text-start mb-2 ' + source + '">' + 
+        '<strong class="ms-1 text-capitalize">' + name + '</strong>' + 
+        '<span class="date ms-2 mt-1">' + datetime + '</span><br>' +
+        '<p class="fs-5 mb-0 p-2 pe-4 float-start " style="width:auto; border-top-right-radius:0.5rem; border-bottom-right-radius: 0.5rem; background-color: #efefef;">' + message + '</p>' + 
+      '</div>');
+    }
     $chat.scrollTop($chat[0].scrollHeight);
   };
   chatSocket.onclose = function(e) {
