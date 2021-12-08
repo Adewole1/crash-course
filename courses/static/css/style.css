@@ -146,7 +146,7 @@ a {
 }
 
 #chat-input {
-  position:absolute;
+  position:fixed;
   bottom:0;
   background:#efefef;
   width:100%;
