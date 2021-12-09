@@ -158,6 +158,7 @@ if os.getcwd() == '/app':
     import dj_database_url
     BASE_DIR = os.path.dirname(os.path.abspath(__file__))
     print(BASE_DIR)
+    DEBUG = False
     DATABASES = {
     'default': dj_database_url.config(default='postgres://localhost')
     }
