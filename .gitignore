@@ -9,3 +9,4 @@ env/
 ubuntu-env/
 *.pyc
 migrations/
+static/
